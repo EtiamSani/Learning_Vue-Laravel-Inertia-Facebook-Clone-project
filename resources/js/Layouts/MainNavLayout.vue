@@ -1,4 +1,8 @@
-<script setup>
+
+
+
+
+<script>
 import { ref } from "vue";
 import { Link, usePage } from "@inertiajs/vue3";
 
@@ -16,13 +20,59 @@ import Logout from "vue-material-design-icons/Logout.vue";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+
+const showMenu = ref(false);
+const { auth } = usePage().props;
+const user = auth.user;
+
+// Utilisation de useGeneralStore et storeToRefs
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } =
-    storeToRefs(useGeneral);
+const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+export default {
+  
 
-const user = usePage().props.auth.user;
+    components: {
+        showMenu,
+      user,
+      isPostOverlay,
+      isCropperModal,
+      isImageDisplay,
+      Magnify,
+      Home,
+      HomeOutline,
+      TelevisionPlay,
+      StorefrontOutline,
+      AccountGroup,
+      ControllerClassicOutline,
+      DotsGrid,
+      FacebookMessenger,
+      Bell,
+      Logout,
+      Link
+    },
+  data() {
+    return {
+      showMenu: false,
+      user: null,
+      isPostOverlay: null,
+      isCropperModal: null,
+      isImageDisplay: null
+    };
+  },
+  mounted() {
+    // Utilisation de useGeneralStore et storeToRefs après le montage du composant
+    const useGeneral = useGeneralStore();
+    const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
-let showMenu = ref(false);
+    this.isPostOverlay = isPostOverlay;
+    this.isCropperModal = isCropperModal;
+    this.isImageDisplay = isImageDisplay;
+
+    // Utilisation de usePage() pour récupérer les données d'authentification après le montage du composant
+    const { auth } = usePage().props;
+    this.user = auth.user;
+  }
+};
 </script>
 
 <template>
