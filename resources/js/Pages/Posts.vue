@@ -51,9 +51,38 @@ export default {
                             <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]" src="https://picsum.photos/id/237/200/300">
                             <div class="text-[15px] text-gray-800 font-extrabold pl-3">balbalba</div>
                         </Link>
-
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <AccountMultiple :size="40" fillColor="#5BD7C6"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Amis</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <Flag :size="40" fillColor="#F2682C"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Pages</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <ClockTimeTwoOutline :size="40" fillColor="#21AAFA"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Most Recent</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <AccountGroup :size="40" fillColor="#20A9FD"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Groups</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <StorefrontOutline :size="40" fillColor="#48C0D8"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Marketplace</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <TelevisionPlay :size="40" fillColor="#9739CF"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Watch</div>
+                        </button>
+                        <button class="flex items-center justify-start w-full cursor-pointer hover:bg-[#E5E6E9] px-2 py-1.5 rounded-md">
+                            <Restore :size="40" fillColor="#32B4D0"/>
+                            <div class="text-[15px] text-gray-800 font-extrabold pl-3">Memories</div>
+                        </button>
                     </div>
-
+                </div>
+                <div id="PostsSection" class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto">
+                    Post section
                 </div>
             </div>
 
