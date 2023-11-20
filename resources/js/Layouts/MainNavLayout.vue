@@ -1,7 +1,3 @@
-
-
-
-
 <script>
 import { ref } from "vue";
 import { Link, usePage } from "@inertiajs/vue3";
@@ -27,51 +23,52 @@ const user = auth.user;
 
 // Utilisation de useGeneralStore et storeToRefs
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+const { isPostOverlay, isCropperModal, isImageDisplay } =
+    storeToRefs(useGeneral);
+    
 export default {
-  
-
     components: {
         showMenu,
-      user,
-      isPostOverlay,
-      isCropperModal,
-      isImageDisplay,
-      Magnify,
-      Home,
-      HomeOutline,
-      TelevisionPlay,
-      StorefrontOutline,
-      AccountGroup,
-      ControllerClassicOutline,
-      DotsGrid,
-      FacebookMessenger,
-      Bell,
-      Logout,
-      Link
+        user,
+        isPostOverlay,
+        isCropperModal,
+        isImageDisplay,
+        Magnify,
+        Home,
+        HomeOutline,
+        TelevisionPlay,
+        StorefrontOutline,
+        AccountGroup,
+        ControllerClassicOutline,
+        DotsGrid,
+        FacebookMessenger,
+        Bell,
+        Logout,
+        Link,
     },
-  data() {
-    return {
-      showMenu: false,
-      user: null,
-      isPostOverlay: null,
-      isCropperModal: null,
-      isImageDisplay: null
-    };
-  },
-  mounted() {
-    // Utilisation de useGeneralStore et storeToRefs après le montage du composant
-    const useGeneral = useGeneralStore();
-    const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+    data() {
+        return {
+            showMenu: false,
+            user: null,
+            isPostOverlay: null,
+            isCropperModal: null,
+            isImageDisplay: null,
+        };
+    },
+    mounted() {
+        // Utilisation de useGeneralStore et storeToRefs après le montage du composant
+        const useGeneral = useGeneralStore();
+        const { isPostOverlay, isCropperModal, isImageDisplay } =
+            storeToRefs(useGeneral);
 
-    this.isPostOverlay = isPostOverlay;
-    this.isCropperModal = isCropperModal;
-    this.isImageDisplay = isImageDisplay;
+        this.isPostOverlay = isPostOverlay;
+        this.isCropperModal = isCropperModal;
+        this.isImageDisplay = isImageDisplay;
 
-    // Utilisation de usePage() pour récupérer les données d'authentification après le montage du composant
-    const { auth } = usePage().props;
-    this.user = auth.user;
-  }
+        // Utilisation de usePage() pour récupérer les données d'authentification après le montage du composant
+        const { auth } = usePage().props;
+        this.user = auth.user;
+    },
 };
 </script>
 
@@ -104,60 +101,120 @@ export default {
                     class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg cursor-pointer"
                 >
                     <div>
-                        <Home v-if="$page.url === '/'" class="mx-auto" :size="27" fillColor="#1A73E3"/>
-                        <HomeOutline v-else class="mx-auto" :size="32" fillColor="#64676B"/>
+                        <Home
+                            v-if="$page.url === '/'"
+                            class="mx-auto"
+                            :size="27"
+                            fillColor="#1A73E3"
+                        />
+                        <HomeOutline
+                            v-else
+                            class="mx-auto"
+                            :size="32"
+                            fillColor="#64676B"
+                        />
                     </div>
                 </div>
-                <div v-if="$page.url === '/'" class="border-b-4 border-b-blue-400 rounded-md">
-                </div>
+                <div
+                    v-if="$page.url === '/'"
+                    class="border-b-4 border-b-blue-400 rounded-md"
+                ></div>
             </Link>
-            <button class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer">
-                <TelevisionPlay class="mx-auto" :size="27" fillColor="#64676B"/>
+            <button
+                class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer"
+            >
+                <TelevisionPlay
+                    class="mx-auto"
+                    :size="27"
+                    fillColor="#64676B"
+                />
             </button>
-            <button class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer">
-                <StorefrontOutline class="mx-auto" :size="27" fillColor="#64676B"/>
+            <button
+                class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer"
+            >
+                <StorefrontOutline
+                    class="mx-auto"
+                    :size="27"
+                    fillColor="#64676B"
+                />
             </button>
-            <button class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer">
+            <button
+                class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer"
+            >
                 <span class="rounded-full border-[2px] border-[#64676B] p-1">
-                    <AccountGroup class="mx-auto" :size="22" fillColor="#64676B"/>
+                    <AccountGroup
+                        class="mx-auto"
+                        :size="22"
+                        fillColor="#64676B"
+                    />
                 </span>
             </button>
-            <button class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer">
-                <ControllerClassicOutline class="mx-auto" :size="32" fillColor="#64676B"/>
+            <button
+                class="flex items-center justify-center h-[48px] p-1 hover:bg-[#F2F2F2] w-full rounded-lg mx-1 cursor-pointer"
+            >
+                <ControllerClassicOutline
+                    class="mx-auto"
+                    :size="32"
+                    fillColor="#64676B"
+                />
             </button>
         </div>
         <div class="flex items-center justify-end w-2/12 mr-4">
-            <button class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer">
-                <DotsGrid :size="23" fillColor="#050505"/>
+            <button
+                class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer"
+            >
+                <DotsGrid :size="23" fillColor="#050505" />
             </button>
-            <button class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer">
-                <FacebookMessenger :size="23" fillColor="#050505"/>
+            <button
+                class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer"
+            >
+                <FacebookMessenger :size="23" fillColor="#050505" />
             </button>
-            <button class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer">
-                <Bell :size="23" fillColor="#050505"/>
+            <button
+                class="rounded-full bg-[#E3E6EA] p-2 hover:bg-gray-300 mx-1 cursor-pointer"
+            >
+                <Bell :size="23" fillColor="#050505" />
             </button>
             <div class="flex items-center justify-center relative">
                 <button @click="showMenu = !showMenu">
-                    <img class="rounded-full ml-1 min-w-[40px] max-h-[40px] cursor-pointer" src="https://picsum.photos/id/237/200/300">
+                    <img
+                        class="rounded-full ml-1 min-w-[40px] max-h-[40px] cursor-pointer"
+                        src="https://picsum.photos/id/237/200/300"
+                    />
                 </button>
-                <div v-if="showMenu" class="absolute bg-white shadow-xl top-10 right-0 w-[330px] rounded-lg p-1 border mt-1">
+                <div
+                    v-if="showMenu"
+                    class="absolute bg-white shadow-xl top-10 right-0 w-[330px] rounded-lg p-1 border mt-1"
+                >
                     <Link href="/" @click="showMenu = !showMenu">
-                        <div class="flex items-center gap-3 hover:bg-gray-200 p-2 rounded-lg">
-                            <img class="rounded-full ml-1 min-w-[35px] max-h-[35px] cursor-pointer" src="https://picsum.photos/id/237/200/300">
+                        <div
+                            class="flex items-center gap-3 hover:bg-gray-200 p-2 rounded-lg"
+                        >
+                            <img
+                                class="rounded-full ml-1 min-w-[35px] max-h-[35px] cursor-pointer"
+                                src="https://picsum.photos/id/237/200/300"
+                            />
                             <span>Bablabla</span>
                         </div>
                     </Link>
-                    <Link class="w-full" :href="route('logout')" as="button" method="post">
-                        <div class="flex items-center gap-3 hover:bg-gray-200 px-2 py-2.5 rounded-lg">
-                            <Logout class="pl-2" :size="30"/>
+                    <Link
+                        class="w-full"
+                        :href="route('logout')"
+                        as="button"
+                        method="post"
+                    >
+                        <div
+                            class="flex items-center gap-3 hover:bg-gray-200 px-2 py-2.5 rounded-lg"
+                        >
+                            <Logout class="pl-2" :size="30" />
                             <span>Logout</span>
                         </div>
                     </Link>
                     <div class="text-xs font-semibold p-2 pt-3 border-t mt-1">
-                        Privacy · Terms · Advertising · Ad Choices · Cookies · Meta © 2023
+                        Privacy · Terms · Advertising · Ad Choices · Cookies ·
+                        Meta © 2023
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
